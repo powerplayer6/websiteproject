@@ -4,8 +4,18 @@
 <meta charset="UTF-8"/>
 <title>Home</title>
 <style>
+.register{
+	height: 350px;
+	width: 300px;
+	position: fixed;
+	top: 8px;
+	left: 1100px;
+	border-style: solid;
+	border-color: black;
+	background-color: #cce4e8;
+}
 .main{
-	height: 1600px;
+	height: 1230px;
 	width: 649px;
 	border-style: solid;
 	border-color: black;
@@ -23,7 +33,7 @@
     top: 240px;
 	left: 17.5%;
 	width: 150px;
-	height: 250px;
+	height: 260px;
 	border-style: solid;
 	border-color: black;
 	background-color: #faa5bc;
@@ -45,6 +55,7 @@
 	margin-top: 3px;
 	background-color: white;
 }
+
 .text{
 	font-size: 23px;
 	margin-top: 10px;
@@ -54,6 +65,59 @@
 	text-align: left;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.menuOption2{
+	font-size: 14px;
+	height: 40px;
+	width: 146px;
+	margin-top: 3px;
+	background-color: white;
+}
+/* Dropdown Button */
+.dropbtn {
+  width: 150px;
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
 </style>
 </head>
 <body style="background-color: #d6d6d6; font-family: Verdana, Geneva, sans-serif;">
@@ -67,20 +131,45 @@
 		</div></center>
 		
 		<center><div class="menuOption">
-			<center><a href="page1.html">Manga Reviews</a></center>
-		</div></center>
-		
-		<center><div class="menuOption">
 			<center><a href="page3.html">Schedule</a></center>
 		</div></center>
 		
-		<center><div class="menuOption">
-			<center><a href="page2.html">Anime Reviews</a></center>
-		</div></center>
+		<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+		</script>
 		
-		<center><div class="menuOption">
-			<center><a href="page4.html">Game Reviews</a></center>
-		</div></center>
+		<button onclick="myFunction()" class="dropbtn">Reviews:</button>
+		<div id="myDropdown" class="dropdown-content">
+			<center><div class="menuOption2">
+				<center><a href="page1.html">Manga Reviews</a></center>
+			</div></center>
+		
+			<center><div class="menuOption2">
+				<center><a href="page2.html">Anime Reviews</a></center>
+			</div></center>
+		
+			<center><div class="menuOption2">
+				<center><a href="page4.html">Game Reviews</a></center>
+			</div></center>
+		</div>
 	</div>
 	
 	<center><div class="main">
@@ -119,6 +208,61 @@
 		<div style="font-size:28px; margin-top: 15px; margin-bottom: 15px;">
 			<center><b>Featured content:</b></center>
 		</div>
+		
+		<center><div>
+			<script type="text/javascript">
+				function changeImage(a) {
+				document.getElementById("img").src=a;
+				}
+			</script>
+			<div id="main_img">
+				<img id="img" src="foom.jpeg" style="width: 250px; height: 250px">
+			</div>
+			<br>
+			<div id="thumb_img">
+				<button type="button" onclick='changeImage("foom.jpeg");' style="height: 50px">BokuBen</button>
+				<button type="button" onclick='changeImage("jur.jpg");' style="height: 50px">Juliet</button>
+				<button type="button" onclick='changeImage("shami.png");' style="height: 50px">Shamiko</button>
+			</div>
+		</div></center>
+		<br>
+		<center><div style="font-size: 20px;">
+			<b>A short list of my favorites:</b>
+		</div></center>
+		
+		<div style="margin-top: 10px; width: 220px;">
+		<ul>
+			<li style="float:left">BokuBen</li><br>
+			<li style="float:left">GoToubun</li><br>
+			<li style="float:left">Boarding School Juliet</li><br>
+			<li style="float:left">Senryuu Girl</li><br>
+			<li style="float:left">Persona 3</li><br>
+			<li style="float:left">Danganronpa</li>
+		</ul>  
+		</div>
 	</div></center>
+	
+	<div class="register">
+		<div class="header" style="font-size: 35px">
+			<center><i>Login/Register</i></center>
+		</div><br>
+		<center>
+		<b>Register:</b><br>
+		<div style="margin-top: 10px; margin-bottom:10px;">
+		Username: <input type='text' autofocus="autofocus"/><br>
+		Password: <input type="password"/><br>
+		Repeat pass: <input type="password"/><br>
+		E-mail: <input type='email'><br>
+		<input type='submit' value='Register'/><br>
+		</div></center>
+		<center>
+		<b>Login:</b><br>
+		<div style="margin-top: 10px; margin-bottom:10px;">
+		Username: <input type='text' autofocus="autofocus"/><br>
+		Password: <input type="password"/><br>
+		<input type='submit' value='Login'/><br>
+		</div>
+		</center>
+	</div>
 </body>
 </html>
